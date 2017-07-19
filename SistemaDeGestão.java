@@ -84,9 +84,8 @@ public class SistemaDeGestão {
 		
 		if(Conf==1) {
 			int i=0;
-			while(array[i]!=null) {
+			while(array[i]!=null)
 				++i;
-			}
 			
 			String[] horario = new String[6];
 			horario[0] = "7h30 - 9h10";
@@ -105,7 +104,7 @@ public class SistemaDeGestão {
 			}
 			int opcao = scan.nextInt();
 			
-			String aloc = "DATA: " +data + "  HORÁRIO:  " + horario[opcao-1] + "  RESPONSÁVEL: " + nome + "  PARA: " + atvdd;
+			String aloc = "DATA: " +data + "\nHORÁRIO:  " + horario[opcao-1] + "\nRESPONSÁVEL: " + nome + "\nATIVIDADE: " + atvdd;
 			
 			int conf = 1;
 			i=0;
@@ -116,15 +115,16 @@ public class SistemaDeGestão {
 				}
 				++i;
 			}
-			
+						
 			if(conf == 1) {
-				array[i] = aloc;
+				System.out.println("Informações sobre as atividades");
+				Scanner scan1 = new Scanner(System.in);
+				String info = scan1.nextLine();
+				array[i] = aloc + "\nINFORMAÇÕES: " + info;
 				System.out.println("ALOCADO COM SUCESSO");
 			}
 		}
-		
 		return array;
-
 	}
 	
 	static void alocacao(int numUsers){
@@ -149,7 +149,7 @@ public class SistemaDeGestão {
 			opcao = scan.nextInt();
 			
 			if(opcao == 1) {
-				System.out.println("Escolha a sala\n 1-Sala 1    2-Sala 2");
+				System.out.println("Escolha a sala\n1-Sala 1    2-Sala 2");
 				opcao = scan.nextInt();
 				
 				if(opcao == 1) {
@@ -171,7 +171,7 @@ public class SistemaDeGestão {
 			}else if(opcao == 3) {
 				aud = alocacao1(aud, usuarios[index], privilegios[index]);
 			}else if(opcao == 4) {
-				System.out.println("Escolha o Projetor\n1- Proj 1    2- Proj 2");
+				System.out.println("Escolha o Projetor\n1-Proj 1    2-Proj 2");
 				opcao = scan.nextInt();				
 
 				if(opcao == 1) {
@@ -259,16 +259,19 @@ public class SistemaDeGestão {
 	}
 	
 	static void relatorio(int numUsers) {
+		System.out.println("RELATORIO\n");
 		
 		System.out.println("NUMERO ATUAL DE USUARIOS NO SISTEMA -> "+numUsers+"\n");
+		System.out.println("NUMERO TOTAL DE RECURSOS -> 7\n");
 		
+		int numAloc=0;
 		int i=0;
 		System.out.println("SALA 1");
 		while (sala1[i]!=null) {
-			System.out.println(sala1[i]);
+			System.out.println((i+1)+") "+sala1[i]+"\n");
 			++i;
 		}
-		
+		numAloc += i;
 		if(i==0)
 			System.out.println("ESTE RECUSO AINDA NÃO POSSUI ALOCAÇÕES");
 		System.out.println("\n");
@@ -276,10 +279,10 @@ public class SistemaDeGestão {
 		i=0;
 		System.out.println("SALA 2");
 		while (sala2[i]!=null) {
-			System.out.println(sala2[i]);
+			System.out.println((i+1)+") "+sala2[i]+"\n");
 			++i;
 		}
-		
+		numAloc += i;
 		if(i==0)
 			System.out.println("ESTE RECUSO AINDA NÃO POSSUI ALOCAÇÕES");
 		System.out.println("\n");
@@ -287,10 +290,10 @@ public class SistemaDeGestão {
 		i=0;
 		System.out.println("LABORATÓRIO 1");
 		while (lab1[i]!=null) {
-			System.out.println(lab1[i]);
+			System.out.println((i+1)+") "+lab1[i]+"\n");
 			++i;
 		}
-		
+		numAloc += i;
 		if(i==0)
 			System.out.println("ESTE RECUSO AINDA NÃO POSSUI ALOCAÇÕES");
 		System.out.println("\n");
@@ -298,10 +301,10 @@ public class SistemaDeGestão {
 		i=0;
 		System.out.println("LABORATÓRIO 2");
 		while (lab2[i]!=null) {
-			System.out.println(lab2[i]);
+			System.out.println((i+1)+") "+lab2[i]+"\n");
 			++i;
 		}
-		
+		numAloc += i;
 		if(i==0)
 			System.out.println("ESTE RECUSO AINDA NÃO POSSUI ALOCAÇÕES");
 		System.out.println("\n");
@@ -309,10 +312,10 @@ public class SistemaDeGestão {
 		i=0;
 		System.out.println("AUDITÓRIO");
 		while (aud[i]!=null) {
-			System.out.println(aud[i]);
+			System.out.println((i+1)+") "+aud[i]+"\n");
 			++i;
 		}
-		
+		numAloc += i;
 		if(i==0)
 			System.out.println("ESTE RECUSO AINDA NÃO POSSUI ALOCAÇÕES");
 		System.out.println("\n");
@@ -320,10 +323,10 @@ public class SistemaDeGestão {
 		i=0;
 		System.out.println("PROJETOR 1");
 		while (proj1[i]!=null) {
-			System.out.println(proj1[i]);
+			System.out.println((i+1)+") "+proj1[i]+"\n");
 			++i;
 		}
-		
+		numAloc += i;
 		if(i==0)
 			System.out.println("ESTE RECUSO AINDA NÃO POSSUI ALOCAÇÕES");
 		System.out.println("\n");
@@ -331,13 +334,15 @@ public class SistemaDeGestão {
 		i=0;
 		System.out.println("PROJETOR 2");
 		while (proj2[i]!=null) {
-			System.out.println(proj2[i]);
+			System.out.println((i+1)+") "+proj2[i]+"\n");
 			++i;
 		}
-		
+		numAloc += i;
 		if(i==0)
 			System.out.println("ESTE RECUSO AINDA NÃO POSSUI ALOCAÇÕES");
 		System.out.println("\n");
+		
+		System.out.println("NUMERO TOTAL DE ALOCAÇÕES -> "+numAloc);
 		
 			
 	}
