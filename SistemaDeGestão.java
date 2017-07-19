@@ -88,8 +88,8 @@ public class SistemaDeGestão {
 				++i;
 			
 			String[] horario = new String[6];
-			horario[0] = "7h30 - 9h10";
-			horario[1] = "9h20 - 11h00";
+			horario[0] = "07h30 - 09h10";
+			horario[1] = "09h20 - 11h00";
 			horario[2] = "11h10 - 12h50";
 			horario[3] = "13h30 - 15h10";
 			horario[4] = "15h20 - 17h00";
@@ -109,7 +109,7 @@ public class SistemaDeGestão {
 			int conf = 1;
 			i=0;
 			while(array[i]!=null) {
-				if(aloc.equals(array[i])) {
+				if(aloc.substring(0, 20).equals(array[i].substring(0,20))) {
 					System.out.println("ERRO, ESSE HORARIO JA FOI ALOCADO!");
 					conf = 0;
 				}
