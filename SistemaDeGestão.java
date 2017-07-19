@@ -109,7 +109,7 @@ public class SistemaDeGestão {
 			int conf = 1;
 			i=0;
 			while(array[i]!=null) {
-				if(aloc.substring(0, 20).equals(array[i].substring(0,20))) {
+				if(aloc.substring(0, 28).equals(array[i].substring(0,28))) {
 					System.out.println("ERRO, ESSE HORARIO JA FOI ALOCADO!");
 					conf = 0;
 				}
