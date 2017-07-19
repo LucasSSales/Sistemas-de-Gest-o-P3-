@@ -184,10 +184,7 @@ public class SistemaDeGestão {
 			
 		}else {
 			System.out.println("Usuario não cadastrado, recomenda-se fazer o cadastro antes de realizar alocação");
-		}
-		
-		
-				
+		}			
 	}
 	
 	static void consulta(Scanner scan, int numUsers) {
@@ -264,7 +261,8 @@ public class SistemaDeGestão {
 		System.out.println("NUMERO ATUAL DE USUARIOS NO SISTEMA -> "+numUsers+"\n");
 		System.out.println("NUMERO TOTAL DE RECURSOS -> 7\n");
 		
-		int numAloc=0;
+		int numAloc = 0;
+		int numEmProc = 0;
 		int i=0;
 		System.out.println("SALA 1");
 		while (sala1[i]!=null) {
@@ -272,8 +270,10 @@ public class SistemaDeGestão {
 			++i;
 		}
 		numAloc += i;
-		if(i==0)
-			System.out.println("ESTE RECUSO AINDA NÃO POSSUI ALOCAÇÕES");
+		if(i==0) {
+			System.out.println("EM PROCESSO DE ALOCAÇÃO");
+			++numEmProc;
+		}
 		System.out.println("\n");
 				
 		i=0;
@@ -283,8 +283,10 @@ public class SistemaDeGestão {
 			++i;
 		}
 		numAloc += i;
-		if(i==0)
-			System.out.println("ESTE RECUSO AINDA NÃO POSSUI ALOCAÇÕES");
+		if(i==0) {
+			System.out.println("EM PROCESSO DE ALOCAÇÃO");
+			++numEmProc;
+		}
 		System.out.println("\n");
 				
 		i=0;
@@ -294,8 +296,10 @@ public class SistemaDeGestão {
 			++i;
 		}
 		numAloc += i;
-		if(i==0)
-			System.out.println("ESTE RECUSO AINDA NÃO POSSUI ALOCAÇÕES");
+		if(i==0) {
+			System.out.println("EM PROCESSO DE ALOCAÇÃO");
+			++numEmProc;
+		}
 		System.out.println("\n");
 				
 		i=0;
@@ -305,8 +309,10 @@ public class SistemaDeGestão {
 			++i;
 		}
 		numAloc += i;
-		if(i==0)
-			System.out.println("ESTE RECUSO AINDA NÃO POSSUI ALOCAÇÕES");
+		if(i==0) {
+			System.out.println("EM PROCESSO DE ALOCAÇÃO");
+			++numEmProc;
+		}
 		System.out.println("\n");
 				
 		i=0;
@@ -316,8 +322,10 @@ public class SistemaDeGestão {
 			++i;
 		}
 		numAloc += i;
-		if(i==0)
-			System.out.println("ESTE RECUSO AINDA NÃO POSSUI ALOCAÇÕES");
+		if(i==0) {
+			System.out.println("EM PROCESSO DE ALOCAÇÃO");
+			++numEmProc;
+		}
 		System.out.println("\n");
 				
 		i=0;
@@ -327,8 +335,10 @@ public class SistemaDeGestão {
 			++i;
 		}
 		numAloc += i;
-		if(i==0)
-			System.out.println("ESTE RECUSO AINDA NÃO POSSUI ALOCAÇÕES");
+		if(i==0) {
+			System.out.println("EM PROCESSO DE ALOCAÇÃO");
+			++numEmProc;
+		}
 		System.out.println("\n");
 				
 		i=0;
@@ -338,11 +348,14 @@ public class SistemaDeGestão {
 			++i;
 		}
 		numAloc += i;
-		if(i==0)
-			System.out.println("ESTE RECUSO AINDA NÃO POSSUI ALOCAÇÕES");
+		if(i==0) {
+			System.out.println("EM PROCESSO DE ALOCAÇÃO");
+			++numEmProc;
+		}
 		System.out.println("\n");
 		
 		System.out.println("NUMERO TOTAL DE ALOCAÇÕES -> "+numAloc);
+		System.out.println("\nNUMERO DE RECURSOS EM PROCESSO DE ALOCAÇÃO -> "+numEmProc+"\n");
 		
 			
 	}
